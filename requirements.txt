@@ -1,3 +1,4 @@
 Flask==2.2.5
 Flask-SQLAlchemy==3.0.5
 PyPDF2==3.0.0
+gunicorn==21.2.0  # Add this line with the appropriate version
