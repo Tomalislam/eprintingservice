@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Printing Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">E-Printing Service</h1>
+        <p class="intro">Upload your PDF files and get an instant price calculation.</p>
+        
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf_files" multiple required>
+            <label for="page_size">Select Page Size:</label>
+            <select name="page_size" required>
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+            </select>
+            <label for="color_type">Select Color Type:</label>
+            <select name="color_type" required>
+                <option value="color">Color</option>
+                <option value="black_white">Black & White</option>
+            </select>
+            <button type="submit" class="upload-btn">Calculate</button>
+        </form>
+
+        {% if page_details %}
+            <div class="results">
+                <h2>Calculation Details</h2>
+                <ul>
+                    {% for detail in page_details %}
+                        <li>{{ detail.filename }}: {{ detail.pages }} pages, {{ detail.color }} - {{ detail.size }}: ${{ detail.price }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Total Price: ${{ total_price }}</h3>
+                <button onclick="window.location.href='/order_form'">Order Now</button>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
