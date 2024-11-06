@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #283c86, #45a247);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-btn, .order-btn {
+    background-color: #45a247;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.upload-btn:hover, .order-btn:hover {
+    background-color: #357a38;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+}
